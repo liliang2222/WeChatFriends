@@ -4,10 +4,12 @@
     <textarea  placeholder='请在这里写点什么吧……' style='height: 4em'></textarea>
   </view>
   <view class='img_layout'>
-    <view class='img'  wx:for="{{imgPaths}}" wx:key='{{imgPaths}}'>
-      <view class='img_icon' bindtap='selectPic' data-index="{{item}}">
-        <image src='{{item}}'></image>
+      <view class='img'  wx:for="{{imgPaths}}" wx:key='{{imgPaths}}'>
+        <view class='img_icon' bindtap='selectPic' data-index="{{item}}">
+          <image src='{{item}}'></image>
+        </view>
       </view>
-    </view>
   </view>
+  <text bindtap='upload'>发表</text>
 </view>
+
