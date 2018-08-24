@@ -8,22 +8,22 @@ page{
   width: 100%;
 }
 .describe {
-  padding: 10px 16px;
+  padding: 10px;
   background-color: white;
   width: 100%;
   box-sizing: border-box;
 }
 .describe textarea{
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
+  min-height: 100px;
+  line-height: 1.6em;
 }
 .img_layout{
   width: 100%;
   float: left;
   box-sizing: border-box;
-  border-style: dashed;
-  border-color: gray;
-  border-width: 1px;
+  background-color: white;
 }
 .img{
   width: 33.3333%;
@@ -43,11 +43,12 @@ page{
 }
 text{
   float: right;
-  padding: 4px 8px;
+  padding: 4px 12px;
   margin: 10px;
-  color: rgba(0, 102, 255, 0.856);
-  border: solid gray 1px;
+  background-color: #17abe3;
+  border-style: solid;
   border-radius: 5px;
   font-size: 16px;
+  color: white;
 }
 

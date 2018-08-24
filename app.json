@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/friends/friends",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -8,5 +9,27 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "color": "#bfbfbf",
+    "selectedColor": "#17abe3",
+    "list": [{
+        "pagePath": "pages/friends/friends",
+        "text": "朋友圈",
+        "iconPath": "image/friends_no.png",
+        "selectedIconPath": "image/friends_yes.png"
+      },{
+      "pagePath": "pages/index/index",
+      "text": "发布",
+      "iconPath": "image/publish_no.png",
+      "selectedIconPath": "image/publish_yes.png"
+    },
+    {
+      "pagePath": "pages/logs/logs",
+      "text": "日志",
+      "iconPath": "image/log_no.png",
+      "selectedIconPath": "image/log_yes.png"
+    }]
   }
 }

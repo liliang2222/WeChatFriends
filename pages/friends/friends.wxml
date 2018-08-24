@@ -1,0 +1,44 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{swiper_img}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='friends_content'>
+  <view class='friends_item' wx:for="{{content}}" >
+    <view class='user_head'>
+      <image class='user_head_icon' src='../../image/head.jpg'></image>
+    </view>
+    <view class='text_content'>
+      <view class='nickname'>
+        <text>张三</text>
+      </view>
+      <view class='friends_text'>
+        <text>{{item.content}}</text>
+      </view>
+      <view class='img_content'>
+        <view class='img'  wx:for='{{fun.imgPathSplit(item.paths)}}' wx:for-item="imgs" >
+          <view class='img_icon'>
+            <image src='{{url+imgs}}'></image>
+          </view>
+        </view>
+        <view class='img_clear'></view>
+      </view>
+      <view class='publish_time'>
+        <text>{{item.create_date}}</text>
+      </view>
+    </view>
+    
+    <view class='clear'></view>
+  </view>
+</view>
+
+<wxs module="fun">
+   module.exports = {
+      imgPathSplit: function(s) {
+         if (s) return s.split(",");
+      }
+   }
+</wxs>
