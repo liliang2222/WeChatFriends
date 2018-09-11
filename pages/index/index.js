@@ -9,10 +9,24 @@ Page({
     uploadFinish:0,
     totalImg:0,
     content:"",
+    nickname:"",
+    head_url:"",
   },
 
   onLoad: function () {
- 
+    
+  },
+  onShow:function(){
+    var that = this;
+    wx.getUserInfo({
+      success: function (res) {
+        console.log(res.userInfo);
+        that.setData({
+          nickname: res.userInfo.nickName,
+          head_url: res.userInfo.avatarUrl,
+        })
+      }
+    })
   },
   selectPic:function(event){
     console.log("点击事件:" + event.currentTarget.dataset['index']);
@@ -44,8 +58,9 @@ Page({
   upload:function(){
     console.log("上传");
     var that = this;
-    if(this.data.imgPaths.length>1){
-      this.uploadFile(this.data.imgPaths[0]);
+   
+    if (that.data.imgPaths.length > 1) {
+      that.uploadFile(this.data.imgPaths[0]);
     }
   },
   uploadFile(path){
@@ -82,6 +97,8 @@ Page({
         "paths":this.data.pathFromServer,
         "content":this.data.content,
         "create_date": utils.formatTime(new Date()),
+        "user": this.data.nickname,
+        "head_url": this.data.head_url,
       },
       header: {
         //'content-type': 'application/json' // 默认值
