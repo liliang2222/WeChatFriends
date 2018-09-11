@@ -9,11 +9,11 @@
 <view class='friends_content'>
   <view class='friends_item' wx:for="{{content}}" >
     <view class='user_head'>
-      <image class='user_head_icon' src='../../image/head.jpg'></image>
+      <image class='user_head_icon' src='{{item.head_url}}'></image>
     </view>
     <view class='text_content'>
       <view class='nickname'>
-        <text>张三</text>
+        <text>{{item.user}}</text>
       </view>
       <view class='friends_text'>
         <text>{{item.content}}</text>
